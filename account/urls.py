@@ -3,15 +3,15 @@ from django.contrib.auth import views as auth_views
 from . import views
 
 urlpatterns = [
-    # view de login
+    # url de login
     # path('login/', views.user_login, name='login'),
 
-    # todos os urls para as views de autenticação abaixo 
-    # podem ser substituídos pelos padrões de url 
+    # todos as urls para as views de autenticação abaixo 
+    # podem ser substituídas pelos padrões de url 
     # para autenticação do Django, da seguinte maneira:
     # path('', include('django.contrib.auth.urls'))
 
-    # views de autenticação
+    ### urls de autenticação ###
     # urls de login e logout
     path('login/',
          auth_views.LoginView.as_view(),
@@ -42,4 +42,8 @@ urlpatterns = [
     path('reset/done',
          auth_views.PasswordResetCompleteView.as_view(),
          name='password_reset_complete'),
+     #####################################
+     
+     # url para registro de novo usuário
+     path('register/', views.register, name='register'),
 ]
