@@ -46,4 +46,7 @@ urlpatterns = [
      
      # url para registro de novo usuário
      path('register/', views.register, name='register'),
+
+     # url para editar o perfil de usuário
+     path('edit/', views.edit, name='edit'),
 ]
