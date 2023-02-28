@@ -138,3 +138,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Permitir que o servidor Django sirva os arquivos de mídia carregados pelo usuário
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+# backends de autenticação
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',    # default
+    'account.authentication.EmailAuthBackend',      # personalizado
+]
