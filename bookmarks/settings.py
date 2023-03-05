@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-l*1jtc8&s$_+b#r-*uf+#ti39*6sxdg19%0&w%-8=_^)^&7ha!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -144,4 +146,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',    # default
     'account.authentication.EmailAuthBackend',      # personalizado
+    'social_core.backends.facebook.FacebookOAuth2', # autenticação com o Facebook
+    'social_core.backends.twitter.TwitterOAuth',    # autenticação com o Twitter
+    'social_core.backends.google.GoogleOAuth2',     # autenticação com o Google
 ]
+
+
+# Configurações para log-in com redes sociais
+SOCIAL_AUTH_FACEBOOK_KEY = os.environ['SOCIAL_Facebook_Key']        # ID do App Bookmarks no Facebook
+SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['SOCIAL_Facebook_Secret']  # Senha do App Bookmarks no Facebook
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']  # Permissões extras para solicitar aos usuários do Facebook
+
+SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_Twitter_Key']          # ID do App Bookmarks no Teitter
+SOCIAL_AUTH_TWITER_SECRET = os.environ['SOCIAL_Twitter_Secret']     # Senha do App Bookmarks no Twitter
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ['SOCIAL_Google_Key']     # ID do App Bookmarks no Google
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ['SOCIAL_Google_Secret']   # Senha do App Bookmarks no Google
