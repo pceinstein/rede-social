@@ -134,8 +134,7 @@ input[type=submit], a.button {
 ul.messages {
     margin:10px 100px;
     padding:0;
-    list-style-type:
-    none;
+    list-style-type:none;
 }
 ul.messages li.success,
 ul.messages li.warning,
@@ -180,6 +179,7 @@ ul.messages li a.close {
     list-style:none;
     padding:10px 20px;
     margin:0 0 10px 0;
+    text-align: center;
 }
 .social li a {
     width:100%;
