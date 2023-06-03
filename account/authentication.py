@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class EmailAuthBackend(object):
     '''
-        Faz autenticação usando endereço de email
+        Faz a autenticação usando um endereço de email
     '''
 
     def authenticate(self, request, username=None, password=None):

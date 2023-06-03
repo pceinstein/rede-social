@@ -158,7 +158,7 @@ SOCIAL_AUTH_FACEBOOK_KEY = os.environ['SOCIAL_Facebook_Key']        # ID do App 
 SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['SOCIAL_Facebook_Secret']  # Senha do App Bookmarks no Facebook
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']  # Permissões extras para solicitar aos usuários do Facebook
 
-SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_Twitter_Key']          # ID do App Bookmarks no Teitter
+SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_Twitter_Key']          # ID do App Bookmarks no Twitter
 SOCIAL_AUTH_TWITER_SECRET = os.environ['SOCIAL_Twitter_Secret']     # Senha do App Bookmarks no Twitter
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ['SOCIAL_Google_Key']     # ID do App Bookmarks no Google

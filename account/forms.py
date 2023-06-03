@@ -32,7 +32,7 @@ class ProfileEditForm(forms.ModelForm):
         fields = ('date_of_birth', 'photo')
 
 
-# utilizado com a antiga view usr_login
+# utilizado com a antiga view user_login
 # substutuída pelos padrões de autenticação do Django
 # class LoginForm(forms.Form):
 #    username = forms.CharField()

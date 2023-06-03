@@ -65,13 +65,13 @@
         (function(){
             // Verifica novamente se a jQuery está indefinida
             if(typeof window.jQuery == 'undefined') {
-            if(--attempts > 0) {
-                // Chama a si mesmo em alguns milissegundos
-                window.setTimeout(arguments.callee, 250)
-            } else {
-                // Excesso de tentativas para carregar, envia um erro
-                alert('An error occurred while loading jQuery')
-            }
+                if(--attempts > 0) {
+                    // Chama a si mesmo em alguns milissegundos
+                    window.setTimeout(arguments.callee, 250)
+                } else {
+                    // Excesso de tentativas para carregar, envia um erro
+                    alert('An error occurred while loading jQuery')
+                }
             } else {
                 bookmarklet();
             }
