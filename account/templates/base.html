@@ -52,5 +52,36 @@
         {% block content %}
         {% endblock content %}
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- // o JS Cookie é uma API JavaScript para lidar com cookies -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script>
+        // Definindo um cabeçalho para as requisições Ajax, contendo o valor do token csrf.
+        // ler o valor do cookie csrftoken
+        var csrftoken = Cookies.get('csrftoken');
+        // define uma função para verificar se um método HTTP é seguro (não exigem CSRF)
+        function csrfSafeMethod(method){
+            // estes métodos HTTP não exigem proteção contra CSRF
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+        // configurando as requisições Ajax
+        $.ajaxSetup({
+            // antes de cada requisição Ajax, verifica se o método da requisição é seguro e
+            // se a requisição atual não tem domínio cruzado.
+            // Se a requisição não é segura, definimos um cabeçalho X-CSRFToken com o valor obtido do cookie
+            beforeSend: function(xhr, settings){
+                if(!csrfSafeMethod(settings.type) && !this.crossDomain){
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        // Executa o código dentro do bloco somente após o DOM estar pronto
+        $(document).ready(function(){
+            {% block domready %}
+            {% endblock domready %}
+        });
+    </script>
 </body>
 </html>
