@@ -20,6 +20,10 @@ class Image(models.Model):
                                         related_name='images_liked',
                                         blank=True)
     
+    # desnormalizando o modelo Image para melhorar o desempenho de consultas
+    total_likes = models.PositiveIntegerField(db_index=True, 
+                                              default=0)
+    
     def __str__(self):
         return self.title
     
