@@ -157,15 +157,15 @@ AUTHENTICATION_BACKENDS = [
 
 
 # Configurações para log-in com redes sociais
-SOCIAL_AUTH_FACEBOOK_KEY = os.environ['SOCIAL_Facebook_Key']        # ID do App Bookmarks no Facebook
-SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['SOCIAL_Facebook_Secret']  # Senha do App Bookmarks no Facebook
+SOCIAL_AUTH_FACEBOOK_KEY = "os.environ['SOCIAL_FACEBOOK_KEY']"        # ID do App Bookmarks no Facebook
+SOCIAL_AUTH_FACEBOOK_SECRET = "os.environ['SOCIAL_FACEBOOK_SECRET']"  # Senha do App Bookmarks no Facebook
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']  # Permissões extras para solicitar aos usuários do Facebook
 
-SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_Twitter_Key']          # ID do App Bookmarks no Twitter
-SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_Twitter_Secret']    # Senha do App Bookmarks no Twitter
+SOCIAL_AUTH_TWITTER_KEY = "os.environ['SOCIAL_TWITTER_KEY']"          # ID do App Bookmarks no Twitter
+SOCIAL_AUTH_TWITTER_SECRET = "os.environ['SOCIAL_TWITTER_SECRET']"    # Senha do App Bookmarks no Twitter
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ['SOCIAL_Google_Key']         # ID do App Bookmarks no Google
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ['SOCIAL_Google_Secret']   # Senha do App Bookmarks no Google
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "os.environ['SOCIAL_GOOGLE_KEY']"         # ID do App Bookmarks no Google
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "os.environ['SOCIAL_GOOGLE_SECRET']"   # Senha do App Bookmarks no Google
 
 
 # Especificar o URL para um modelo
